@@ -57,19 +57,20 @@ type ListProductImgReq struct {
 }
 
 type ProductResp struct {
-	ID            uint   `json:"id"`
-	Name          string `json:"name"`
-	CategoryID    uint   `json:"category_id"`
-	Title         string `json:"title"`
-	Info          string `json:"info"`
-	ImgPath       string `json:"img_path"`
-	Price         string `json:"price"`
-	DiscountPrice string `json:"discount_price"`
-	View          uint64 `json:"view"`
-	CreatedAt     int64  `json:"created_at"`
-	Num           int    `json:"num"`
-	OnSale        bool   `json:"on_sale"`
-	BossID        uint   `json:"boss_id"`
-	BossName      string `json:"boss_name"`
-	BossAvatar    string `json:"boss_avatar"`
+	ID            uint             `json:"id"`
+	Name          string           `json:"name"`
+	CategoryID    uint             `json:"category_id"`
+	Category      ListCategoryResp `json:"category" gorm:"foreignKey:CategoryID"`
+	Title         string           `json:"title"`
+	Info          string           `json:"info"`
+	ImgPath       string           `json:"img_path"`
+	Price         string           `json:"price"`
+	DiscountPrice string           `json:"discount_price"`
+	View          uint64           `json:"view"`
+	CreatedAt     int64            `json:"created_at"`
+	Num           int              `json:"num"`
+	OnSale        bool             `json:"on_sale"`
+	BossID        uint             `json:"boss_id"`
+	BossName      string           `json:"boss_name"`
+	BossAvatar    string           `json:"boss_avatar"`
 }

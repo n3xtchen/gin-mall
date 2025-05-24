@@ -11,8 +11,9 @@ import (
 // 商品模型
 type Product struct {
 	gorm.Model
-	Name          string `gorm:"size:255;index"`
-	CategoryID    uint   `gorm:"not null"`
+	Name          string   `gorm:"size:255;index"`
+	CategoryID    uint     `gorm:"not null"`
+	Category      Category `gorm:"foreignKey:CategoryID"`
 	Title         string
 	Info          string `gorm:"size:1000"`
 	ImgPath       string

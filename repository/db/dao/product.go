@@ -39,7 +39,7 @@ func (dao *ProductDao) ShowProductById(id uint) (product *model.Product, err err
 
 // ListProductByCondition 获取商品列表
 func (dao *ProductDao) ListProductByCondition(condition map[string]interface{}, page types.BasePage) (products []*model.Product, err error) {
-	err = dao.DB.Where(condition).
+	err = dao.DB.Preload("Category").Where(condition).
 		Offset((page.PageNum - 1) * page.PageSize).
 		Limit(page.PageSize).
 		Find(&products).Error

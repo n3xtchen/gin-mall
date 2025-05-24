@@ -6,6 +6,7 @@ type ListCategoryReq struct {
 type ListCategoryResp struct {
 	ID           uint   `json:"id"`
 	CategoryName string `json:"category_name"`
+	ImgPath      string `json:"img_path"`
 	CreatedAt    int64  `json:"created_at"`
 }
 

@@ -96,7 +96,8 @@ create table mall_db.category
     created_at    datetime     null,
     updated_at    datetime     null,
     deleted_at    datetime     null,
-    category_name varchar(256) null
+    category_name varchar(256) null,
+    img_path varchar(256) null
 );
 
 create table mall_db.favorite
