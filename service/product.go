@@ -155,6 +155,12 @@ func (s *ProductSrv) ProductList(ctx context.Context, req *types.ProductListReq)
 			ID:            p.ID,
 			Name:          p.Name,
 			CategoryID:    p.CategoryID,
+			Category: types.ListCategoryResp{
+				ID: p.CategoryID,
+				CategoryName: p.Category.CategoryName,
+				ImgPath: p.Category.ImgPath,
+				CreatedAt: p.Category.CreatedAt.Unix(),
+			},
 			Title:         p.Title,
 			Info:          p.Info,
 			ImgPath:       p.ImgPath,

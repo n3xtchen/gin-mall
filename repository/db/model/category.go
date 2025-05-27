@@ -6,4 +6,5 @@ type Category struct {
 	gorm.Model
 	CategoryName string
 	ImgPath      string
+	Products     []Product
 }

@@ -60,7 +60,7 @@ type ProductResp struct {
 	ID            uint             `json:"id"`
 	Name          string           `json:"name"`
 	CategoryID    uint             `json:"category_id"`
-	Category      ListCategoryResp `json:"category" gorm:"foreignKey:CategoryID"`
+	Category      ListCategoryResp `json:"category"`
 	Title         string           `json:"title"`
 	Info          string           `json:"info"`
 	ImgPath       string           `json:"img_path"`
